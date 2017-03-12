@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://schemas.hu.fnt.nl/berichten/response"
+           targetNamespace="http://schemas.hu.fnt.nl/berichten/response">
+
+    <xs:annotation>
+        <xs:appinfo>Response explanation</xs:appinfo>
+        <xs:documentation xml:lang="nl">
+            Dit XSD beschrijft hoe een bericht wordt terug gestuurd, er worden twee decimale waarden meegegeven die de geo-coördinaren vormen van de postcode.
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="locationResponse" type="tns:response"/>
+    <xs:complexType name="response">
+        <xs:all minOccurs="1">
+            <xs:element name="latitude" type="xs:decimal"/>
+            <xs:element name="longitude" type="xs:decimal"/>
+        </xs:all>
+    </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://schemas.hu.fnt.nl/berichten/fault"
+           elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:appinfo>Error explanation</xs:appinfo>
+        <xs:documentation xml:lang="nl">
+            In dit XSD wordt er beschreven hoe een error bericht eruit komt te zien.
+            Ik heb gekozen om een code en een message te laten meegeven omdat dit een gangbare manier is van errorhandling.
+            Het is een anoniem type omdat het mij niet noodzakelijk lijkt om hier meerdere types van te maken.
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="fault">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="errorCode" type="xs:short" nillable="false"/>
+                <xs:element name="message" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
