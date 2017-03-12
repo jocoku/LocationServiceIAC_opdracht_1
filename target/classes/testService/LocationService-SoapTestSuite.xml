@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="6bae7d8e-f354-4b09-87ba-c87f02244a0a" name="LocationService TestSuite"
+               xmlns:con="http://eviware.com/soapui/config">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="f809071f-94c3-40ed-ba33-858001f02025" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true">
+        <con:settings/>
+        <con:testStep type="request" id="4dd7df9b-9449-46b7-928b-12f7a870ff0c" name="Test 1: Correct Uppercase">
+            <con:settings/>
+            <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <con:interface>LocationServiceImplPortBinding</con:interface>
+                <con:operation>locationService</con:operation>
+                <con:request name="Test 1: Correct Uppercase" id="1d3c9c4d-ac0b-413d-a095-6c46699afbc6">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:encoding>UTF-8</con:encoding>
+                    <con:endpoint>http://localhost:8080/services/LocationService</con:endpoint>
+                    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:locationRequest>3731XC</req:locationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:wsaConfig
+                            action="http://schemas.hu.fnt.nl/berichten/message/WS-Interface/locationServiceRequest"
+                            mustUnderstand="NONE" version="200508"/>
+                    <con:wsrmConfig version="1.2"/>
+                </con:request>
+            </con:config>
+        </con:testStep>
+        <con:properties/>
+    </con:testCase>
+    <con:testCase id="f08b1db1-c7b0-4ac8-9a1d-383748a2cd6a" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TestCase 2" searchProperties="true">
+        <con:settings/>
+        <con:testStep type="request" name="Test 2: Correct Lowercase" id="a807bff0-5e2b-4730-88d0-a703d9448ec5">
+            <con:settings/>
+            <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <con:interface>LocationServiceImplPortBinding</con:interface>
+                <con:operation>locationService</con:operation>
+                <con:request name="Test 2: Correct Lowercase" id="4e68eb62-db63-4d8f-a2b4-372e36947fac">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:encoding>UTF-8</con:encoding>
+                    <con:endpoint>http://localhost:8080/services/LocationService</con:endpoint>
+                    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:locationRequest>3731xc</req:locationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+                    <con:assertion type="SOAP Response" id="0bb80156-e6da-4de9-9f93-a62eb21449e7"/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+                    <con:wsrmConfig version="1.2"/>
+                </con:request>
+            </con:config>
+        </con:testStep>
+        <con:properties/>
+    </con:testCase>
+    <con:testCase id="6265bfd6-f047-42ff-a4c4-46d41438bf7d" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TestCase 3" searchProperties="true">
+        <con:settings/>
+        <con:testStep type="request" name="Test 3: Incorrect Invalid Length" id="9b2921fe-e40d-49d9-9ced-5d6abe200c9f">
+            <con:settings/>
+            <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <con:interface>LocationServiceImplPortBinding</con:interface>
+                <con:operation>locationService</con:operation>
+                <con:request name="Test 3: Incorrect Invalid Length" id="14cb9797-c68b-43d4-b811-c52ca14967b0">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:encoding>UTF-8</con:encoding>
+                    <con:endpoint>http://localhost:8080/services/LocationService</con:endpoint>
+                    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:locationRequest>33731XC</req:locationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+                    <con:assertion type="SOAP Response" id="0d7798de-81ab-4230-ad71-e09f220e0150"/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+                    <con:wsrmConfig version="1.2"/>
+                </con:request>
+            </con:config>
+        </con:testStep>
+        <con:properties/>
+    </con:testCase>
+    <con:testCase id="3b323b5c-c9a3-4dbd-9916-1e2f6ff4745b" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TestCase 4" searchProperties="true">
+        <con:settings/>
+        <con:testStep type="request" name="Test 4: Incorrect Invalid Length" id="a9d7b5ba-7c3f-4186-a8d9-96b93acb51cc">
+            <con:settings/>
+            <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <con:interface>LocationServiceImplPortBinding</con:interface>
+                <con:operation>locationService</con:operation>
+                <con:request name="Test 4: Incorrect Invalid Length" id="67b80bed-4f76-40d9-b29f-4b4c8711fec8">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:encoding>UTF-8</con:encoding>
+                    <con:endpoint>http://localhost:8080/services/LocationService</con:endpoint>
+                    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:locationRequest>731XC</req:locationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+                    <con:assertion type="SOAP Response" id="2e5148ad-8379-457d-bc0f-eff0acce5e19"/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+                    <con:wsrmConfig version="1.2"/>
+                </con:request>
+            </con:config>
+        </con:testStep>
+        <con:properties/>
+    </con:testCase>
+    <con:testCase id="098ee2d4-6e31-400c-b73d-054b1bd6be01" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TestCase 5" searchProperties="true">
+        <con:settings/>
+        <con:testStep type="request" name="Test 5: Incorrect Throw Not Found" id="6a926f30-d7a3-42e7-b386-d6f2b8bec190">
+            <con:settings/>
+            <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <con:interface>LocationServiceImplPortBinding</con:interface>
+                <con:operation>locationService</con:operation>
+                <con:request name="Test 5: Incorrect Throw Not Found" id="0a74a1b3-6026-48bf-b682-29f9fa8b551a">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:encoding>UTF-8</con:encoding>
+                    <con:endpoint>http://localhost:8080/services/LocationService</con:endpoint>
+                    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:locationRequest>6842RR</req:locationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+                    <con:assertion type="SOAP Response" id="9b1c66c4-2e62-4bd5-a6a2-84d0e52ffb6d"/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+                    <con:wsrmConfig version="1.2"/>
+                </con:request>
+            </con:config>
+        </con:testStep>
+        <con:properties/>
+    </con:testCase>
+    <con:testCase id="56b33d81-bf23-41f9-a9b3-2103ded2ef27" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TestCase 6" searchProperties="true">
+        <con:settings/>
+        <con:testStep type="request" name="Test 6: Incorrect Throw Invalid Pattern"
+                      id="6d518b8c-bd05-45bf-bb8a-d35f9e6a63f5">
+            <con:settings/>
+            <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <con:interface>LocationServiceImplPortBinding</con:interface>
+                <con:operation>locationService</con:operation>
+                <con:request name="Test 6: Incorrect Throw Invalid Pattern" id="ebb1982b-33f1-4355-a6cb-114476f478bc">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:encoding>UTF-8</con:encoding>
+                    <con:endpoint>http://localhost:8080/services/LocationService</con:endpoint>
+                    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:locationRequest>375000</req:locationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+                    <con:assertion type="SOAP Response" id="c94742b6-a04c-4f32-b507-cce6052e42a7"/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+                    <con:wsrmConfig version="1.2"/>
+                </con:request>
+            </con:config>
+        </con:testStep>
+        <con:properties/>
+    </con:testCase>
+    <con:testCase id="5155387d-6ab3-4e06-af57-a4a78ec3a0d3" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TestCase 7" searchProperties="true">
+        <con:settings/>
+        <con:testStep type="request" name="Test 7: Incorrect Throw Invalid Pattern"
+                      id="fa181372-4aca-490d-abe1-9ff633f5aed9">
+            <con:settings/>
+            <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <con:interface>LocationServiceImplPortBinding</con:interface>
+                <con:operation>locationService</con:operation>
+                <con:request name="Test 7: Incorrect Throw Invalid Pattern" id="f4519bae-9f98-46e0-8007-c74501d02d37">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:encoding>UTF-8</con:encoding>
+                    <con:endpoint>http://localhost:8080/services/LocationService</con:endpoint>
+                    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:locationRequest>@373DS</req:locationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+                    <con:assertion type="SOAP Response" id="37c63de1-1771-4af5-9c2c-ba350016e70f"/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+                    <con:wsrmConfig version="1.2"/>
+                </con:request>
+            </con:config>
+        </con:testStep>
+        <con:properties/>
+    </con:testCase>
+    <con:properties/>
+</con:testSuite>
