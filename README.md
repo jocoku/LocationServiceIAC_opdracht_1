@@ -10,3 +10,5 @@ Tests kunnen gevonden worden onder 'src/testService'.
 In 'src/GenerationFiles' kunnen de oorsponkelijke XSD en WSDL bestanden gevonden worden.
 'src/LocationService' zijn uit de WSDL gegenereerde bestanden te vinden.
 'src/wsProducer' bevat de implement class die het request omzet naar het response.
+
+In de 'target' folder is het .war bestand van de server te vinden.
